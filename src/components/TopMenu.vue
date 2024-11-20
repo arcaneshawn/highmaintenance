@@ -1,0 +1,38 @@
+<template>
+    <div class="menu-container content-container">
+        <ul class="menu bungee-regular">
+            <li class="menu-item"><RouterLink to="/">Home</RouterLink></li>
+            <li class="menu-item"><a href="#shows" title="View Upcoming Shows">Shows</a></li>
+            <!--<li class="menu-item"><RouterLink to="/">About</RouterLink></li>-->
+            <li class="menu-item"><RouterLink to="/">Contact</RouterLink></li>
+        </ul>
+    </div>
+</template>
+
+<style lang="scss" scoped>
+.menu {
+    max-width: 50%;
+    display: flex;
+    float: right;
+    font-size: 1.2rem;
+    height: 56px;
+    color: var(--brand-light);
+
+    li a {
+        text-decoration: none;
+
+        &:hover {
+            background-color: var(--brand-light);
+            color: var(--brand-alt);
+        }
+    }
+}
+.menu-item {
+    align-content: center;
+}
+.menu a {
+    color: var(--brand-light);
+    font-weight: 800;
+    padding: .5rem 1rem;
+}
+</style>
