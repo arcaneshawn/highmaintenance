@@ -1,5 +1,5 @@
 <template>
-    <section class="content-container contact-us">
+    <section id="contact-us" class="content-container contact-us">
         <div class="band-photo">
             <img src="../assets/HM-BandPhoto.jpg" alt="High Maintenance Band Members" />
         </div>
@@ -32,8 +32,8 @@
                         </div>
 
                         <div>
-                            <input type="radio" id="no" name="highMaintenance" value="dewey" />
-                            <label for="no">No</label>
+                            <input type="radio" id="also-yes" name="highMaintenance" value="also-yes" />
+                            <label for="also-yes">I'm here, aren't I? <span class="cheeky">(Sassy, we like it!)</span></label>
                         </div>
                     </fieldset>
                     <input type="submit" value="Send" />
@@ -46,7 +46,7 @@
 <style lang="scss" scoped>
 .contact-us {
     .band-photo {
-        width: 50%;
+        width: 80%;
         margin: 0 auto;
         padding-top: 10px;
 
@@ -62,7 +62,7 @@
     }
 
     .contact-form {
-        width: 50%;
+        width: 100%;
         margin: 2rem auto 4rem;
         
         form {
@@ -112,6 +112,15 @@
                             accent-color: var(--brand-alt);
                         }
                     }
+
+                    .cheeky {
+                        display: none;
+                    }
+
+                    #also-yes:checked + label .cheeky {
+                        display: inline;
+                    }
+
                 }
             }
 
@@ -145,6 +154,18 @@
                 color: var(--brand-light);
             }
         }
+    }
+}
+
+@media (min-width: 768px) {
+    .contact-us .band-photo, .contact-us .contact-form {
+            width: 70%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .contact-us .band-photo, .contact-us .contact-form {
+            width: 50%;
     }
 }
 </style>

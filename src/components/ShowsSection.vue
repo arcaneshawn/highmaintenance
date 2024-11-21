@@ -8,9 +8,9 @@
 
 <template>
     <section id="shows">
-        <span class="rip-top"><img src="../assets/RippedYo.png" /></span>
+        <span class="rip-top"><img src="../assets/RippedYo.png" alt="" /></span>
         <div class="content-container shows-container restrict-more">
-            <div class="road-case"><img src="../assets/HM-RoadCase.png" /></div>
+            <div class="road-case"><img src="../assets/HM-RoadCase.png" alt="" /></div>
             <div class="show-list">
                 <h2 aria-hidden="true">Upcoming Shows</h2>
                 <ShowItem 
@@ -36,7 +36,7 @@
                 />
             </div>
         </div>
-        <span class="rip-bottom"><img src="../assets/RippedYo.png" /></span>
+        <span class="rip-bottom"><img src="../assets/RippedYo.png" alt="" /></span>
     </section>
 </template>
 
@@ -62,11 +62,13 @@
 
 .shows-container {
     width: 100%;
-    display: flex;
+    display: block;
+    margin: 2rem 0;
 
     .road-case {
-        max-width: 40%;
+        max-width: 80%;
         padding-right: 1.4rem;
+        margin: auto;
 
         img {
             max-width: 100%;
@@ -75,8 +77,7 @@
 
     .show-list {
         width: 100%;
-        max-width: 60%;
-        height: 200px;
+        max-width: 95%;
         margin-top: 2rem;
 
         h2 {
@@ -85,4 +86,19 @@
         }
     }
 }
+
+@media (min-width: 650px) {
+    .shows-container {
+        display: flex;
+
+        .road-case {
+            max-width: 40%;
+            margin: 0;
+        }
+
+        .show-list {
+            max-width: 60%;
+        }
+    }
+} 
 </style>

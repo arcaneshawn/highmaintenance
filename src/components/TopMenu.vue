@@ -1,17 +1,21 @@
 <template>
-    <div class="menu-container content-container">
+    <div class="menu-container">
         <ul class="menu bungee-regular">
             <li class="menu-item"><RouterLink to="/">Home</RouterLink></li>
             <li class="menu-item"><a href="#shows" title="View Upcoming Shows">Shows</a></li>
             <!--<li class="menu-item"><RouterLink to="/">About</RouterLink></li>-->
-            <li class="menu-item"><RouterLink to="/">Contact</RouterLink></li>
+            <li class="menu-item"><a href="#contact-us" title="Contact High Maintenace via Email">Contact</a></li>
         </ul>
     </div>
 </template>
 
 <style lang="scss" scoped>
+.menu-container {
+    width: 100%;
+    height: 100%;
+}
+
 .menu {
-    max-width: 50%;
     display: flex;
     float: right;
     font-size: 1.2rem;

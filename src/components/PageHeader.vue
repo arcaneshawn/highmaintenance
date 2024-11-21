@@ -35,10 +35,9 @@ export default defineComponent({
     width: 100%;
 
     .logo {
-        position: absolute;
-        top: 0;
+        position: relative;
         left: 0;
-        max-width: 62%;
+        max-width: 98%;
 
         img {
             max-width: 100%;
@@ -46,6 +45,7 @@ export default defineComponent({
     }
 
     .sangker {
+        display: none;
         width: 100%;
 
         img {
@@ -53,4 +53,23 @@ export default defineComponent({
         }
     }
 }
+
+@media (min-width: 650px) {
+    .logo-container {
+        .sangker {
+            display: block;
+        }
+
+        .logo {
+            position: absolute;
+            max-width: 62%;
+        }
+    }
+} 
+
+@media (min-width: 830px) {
+    .logo-container .logo {
+        top: 0;
+    }
+} 
 </style>

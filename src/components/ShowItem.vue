@@ -15,7 +15,7 @@
                         <span class="time">{{ time }}</span>
                         <span class="event">View Event 
                             <span>
-                                <img src="../assets/arrow-right.svg" />
+                                <img src="../assets/arrow-right.svg" alt="" />
                             </span>
                         </span>
                     </div>
