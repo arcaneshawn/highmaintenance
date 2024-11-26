@@ -22,7 +22,7 @@ export default function handler(request, response) {
     }
     
     var htmlPart3 = '<dt style="font-size: 20px; font-weight: bold; color: #176eb3; margin-bottom: 10px">Message: </dt>' +
-        '<dd style="font-size: 16px; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px dashed #41b34f;">' + formData.comments + '</dd></dl>' +
+        '<dd style="font-size: 16px; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px dashed #41b34f;">' + formData.messageBody + '</dd></dl>' +
         '</div></body></html>';
     
     var emailContent = htmlPart1.concat(htmlPart3);
