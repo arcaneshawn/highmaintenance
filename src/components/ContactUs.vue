@@ -34,7 +34,7 @@
                     <label for="phoneNumber">Phone Number: </label>
                     <input type="text" name="phoneNumber" id="phoneNumber" v-model="phoneNumber" @blur="validatePhoneNumber" required />
                     <div class="error">
-                        <p class="error-message" v-if="errors.phoneNumber">P* Field is required.</p>
+                        <p class="error-message" v-if="errors.phoneNumber">* Field is required.</p>
                     </div>
 
                     <label for="messageBody">Message: </label>
@@ -53,7 +53,7 @@
 
                         <div>
                             <input type="radio" id="also-yes" name="highMaintenance" value="also-yes" />
-                            <label for="also-yes">I'm here, aren't I? <span class="cheeky">(Sassy, we like it!)</span></label>
+                            <label for="also-yes">I'm here, aren't I? <span class="cheeky">(Sassy!!!)</span></label>
                         </div>
                     </fieldset>
                     <input type="submit" name="submit" value="Submit" />
@@ -192,12 +192,22 @@ function isEmpty(value) {
             }
 
             .two-column {
-                display: flex;
+                display: block;
 
                 .half {
-                    width: 50%; 
+                    width: 100%; 
                     padding: 0 0.5rem;
                     margin-bottom: 1rem;
+                }
+            }
+
+            @media (min-width: 750px) {
+                .two-column {
+                    display: flex;
+
+                    .half {
+                        width: 50%;
+                    }
                 }
             }
 
