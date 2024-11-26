@@ -12,25 +12,36 @@
                     <div class="half">
                         <label for="firstName">First Name: </label>
                         <input type="text" name="FirstName" id="firstName" v-model="firstName" @blur="validateFirstName" required />
-                        <p class="error-message" v-if="errors.firstName">* Please provide a first name.</p>
+                        <div class="error">
+                            <p class="error-message" v-if="errors.firstName">* Field is required.</p>
+                        </div>
                     </div>
                     <div class="half">
                         <label for="lastName">Last Name: </label>
                         <input type="text" name="LastName" id="lastName" v-model="lastName" @blur="validateLastName" required />
-                        <p class="error-message" v-if="errors.lastName">* Please provide a last name.</p>
+                        <div class="error">
+                            <p class="error-message" v-if="errors.lastName">* Field is required.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="one-column">
                     <label for="emailAddress">Email Address: </label>
                     <input type="text" name="emailAddress" id="emailAddress" v-model="emailAddress" @blur="validateEmailAddress" required />
-                    <p class="error-message" v-if="errors.emailAddress">* Please provide a valid email address.</p>
+                    <div class="error">
+                        <p class="error-message" v-if="errors.emailAddress">P* Field is required.</p>
+                    </div>
 
                     <label for="phoneNumber">Phone Number: </label>
                     <input type="text" name="phoneNumber" id="phoneNumber" v-model="phoneNumber" @blur="validatePhoneNumber" required />
-                    <p class="error-message" v-if="errors.phoneNumber">* Please provide a valid phone number.</p>
+                    <div class="error">
+                        <p class="error-message" v-if="errors.phoneNumber">P* Field is required.</p>
+                    </div>
 
                     <label for="messageBody">Message: </label>
                     <textarea name="messageBody" id="messageBody" v-model="messageBody" @blur="validateComments"></textarea>
+                    <div class="error">
+                        <p class="error-message" v-if="errors.messageBody">* Field is required.</p>
+                    </div>
 
                     <fieldset id="highMaintenance">
                         <legend>Are you High Maintenance like us?</legend>
@@ -176,6 +187,9 @@ function isEmpty(value) {
         margin: 2rem auto 4rem;
         
         form {
+            p {
+                margin-bottom: 0;
+            }
 
             .two-column {
                 display: flex;
@@ -243,6 +257,7 @@ function isEmpty(value) {
                 font-size: 1.2rem;
                 color: var(--brand-dark);
                 padding: 0 .6rem;
+                background-color: #fdfdfd;
 
                 &:focus, &:active {
                     border-color: var(--brand-alt);
@@ -257,6 +272,7 @@ function isEmpty(value) {
             input[type=submit] {
                 cursor: pointer;
                 font-weight: bolder;
+                background-color: #faebd7;
             }
 
             input[type=submit]:hover {
@@ -265,6 +281,15 @@ function isEmpty(value) {
             }
         }
     }
+}
+
+.error {
+    min-width: 100%;
+    min-height: 1.8rem;
+}
+
+.error-message {
+    color: red;
 }
 
 @media (min-width: 768px) {

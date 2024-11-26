@@ -38,6 +38,8 @@
             width: inherit;
             color: var(--brand-light);
             font-weight: bolder;
+            font-size: 0.9rem;
+            margin: auto 0;
 
             span {
                 display: block;

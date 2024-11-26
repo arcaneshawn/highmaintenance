@@ -27,7 +27,7 @@ export default function handler(request, response) {
     
     var emailContent = htmlPart1.concat(htmlPart3);
     const msg = {
-        to: 'arcaneshawn@gmail.com',
+        to: 'reservehighmaintenance@gmail.com',
         from: formData.emailAddress,
         subject: 'Website Enquiry',
         content: [

@@ -17,7 +17,7 @@
 
 .menu {
     display: flex;
-    float: right;
+    justify-content: center;
     font-size: 1.2rem;
     height: 56px;
     color: var(--brand-light);
@@ -31,6 +31,13 @@
         }
     }
 }
+
+@media (min-width: 768px) {
+    .menu {
+        float: right;
+    }
+}
+
 .menu-item {
     align-content: center;
 }

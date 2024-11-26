@@ -92,6 +92,7 @@ defineProps({
             width: 40px;
             min-width: 40px;
             font-size: 24px;
+            display: none;
 
             span {
                 width: 100%;
@@ -103,8 +104,20 @@ defineProps({
             }
         }
 
+        @media (min-width: 900px) {
+            .circle-plus {
+                display: block;
+            }        
+        }
+
         .show-info {
-            width: 90%;
+            width: 96%;
+        }
+
+        @media (min-width: 900px) {
+            .show-info {
+                width: 86%;
+            }
         }
 
         div.top, div.bottom {

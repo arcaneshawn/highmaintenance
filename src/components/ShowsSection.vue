@@ -66,8 +66,7 @@
     margin: 2rem 0;
 
     .road-case {
-        max-width: 80%;
-        padding-right: 1.4rem;
+        max-width: 70%;
         margin: auto;
 
         img {
@@ -75,9 +74,15 @@
         }
     }
 
+    @media (min-width: 768px) {
+        .road-case {
+            padding-right: 1.4rem;
+        }
+    }
+
     .show-list {
         width: 100%;
-        max-width: 95%;
+        max-width: 100%;
         margin-top: 2rem;
 
         h2 {
@@ -87,7 +92,7 @@
     }
 }
 
-@media (min-width: 650px) {
+@media (min-width: 768px) {
     .shows-container {
         display: flex;
 
