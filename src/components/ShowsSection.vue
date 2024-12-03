@@ -9,6 +9,15 @@
                 showData: null
             }
         },
+        methods: {
+            formatDate(res) {
+                const year = res.slice(0, 4);
+                const month = res.slice(5, 7);
+                const day = res.slice(8, 10);
+
+                return `${month}-${day}-${year}`;
+            }
+        },
         components: { ShowItem },
         created() {
 
@@ -33,7 +42,7 @@
             <div class="show-list">
                 <h2 aria-hidden="true">Upcoming Shows</h2>
                 <ShowItem v-for="show in showData" 
-                    :date="show.date" 
+                    :date="formatDate(show.date)" 
                     :venue="show.venue"
                     :time="show.time"
                     :link="show.event_link.url"
