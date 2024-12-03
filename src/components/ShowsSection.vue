@@ -1,8 +1,27 @@
 <script>
     import { defineComponent } from 'vue'
     import ShowItem from './ShowItem.vue'
+    import * as prismic from 'https://cdn.skypack.dev/@prismicio/client'
+
     export default defineComponent({
-        components: { ShowItem }
+        data() {
+            return {
+                showData: null
+            }
+        },
+        components: { ShowItem },
+        created() {
+
+            const repositoryName = 'highmaintenance'
+            const client = prismic.createClient(repositoryName)
+
+            const init = async () => {
+                const prismicDoc = await client.getByUID('show_list', 'shows')
+                this.showData = prismicDoc.data.shows
+            }
+
+            init()
+        } 
     })
 </script>
 
@@ -13,26 +32,12 @@
             <div class="road-case"><img src="../assets/HM-RoadCase.png" alt="" /></div>
             <div class="show-list">
                 <h2 aria-hidden="true">Upcoming Shows</h2>
-                <ShowItem 
-                    date="11/16/2024" 
-                    venue="TK's Pub"
-                    time="9pm"
-                    link="https://www.facebook.com/events/1100091994892545"
-                    eventTitle="High Maintenance live at TK's Pub"
-                />
-                <ShowItem 
-                    date="12/20/2024" 
-                    venue="Smyrna Inn"
-                    time="8pm"
-                    link="https://www.facebook.com/events/933891505355143"
-                    eventTitle="High Maintenance live at Smyrna Inn"
-                />
-                <ShowItem 
-                    date="03/29/2025" 
-                    venue="Mr. G's Debut"
-                    time="9pm"
-                    link="https://www.facebook.com/events/535478146077313"
-                    eventTitle="High Maintenance live debut at Mr. G's"
+                <ShowItem v-for="show in showData" 
+                    :date="show.date" 
+                    :venue="show.venue"
+                    :time="show.time"
+                    :link="show.event_link.url"
+                    :eventTitle="'High Maintenance live at ' + show.venue"
                 />
             </div>
         </div>
